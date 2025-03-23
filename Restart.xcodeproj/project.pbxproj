@@ -55,9 +55,11 @@
 		3F93FAD52D8FD58B00E1E5BA /* Restart */ = {
 			isa = PBXGroup;
 			children = (
+				3F93FAEB2D8FDFF400E1E5BA /* Utilities */,
+				3F93FAEA2D8FDFE500E1E5BA /* Views */,
 				3F93FAE82D8FDC0600E1E5BA /* Sounds */,
 				3F93FAD62D8FD58B00E1E5BA /* RestartApp.swift */,
-				3F93FAD82D8FD58B00E1E5BA /* ContentView.swift */,
+				3F93FAE92D8FDFD700E1E5BA /* Screens */,
 				3F93FADA2D8FD59800E1E5BA /* Assets.xcassets */,
 				3F93FADC2D8FD59800E1E5BA /* Preview Content */,
 			);
@@ -79,6 +81,28 @@
 				3F93FAE42D8FDBB900E1E5BA /* success.m4a */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3F93FAE92D8FDFD700E1E5BA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3F93FAD82D8FD58B00E1E5BA /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3F93FAEA2D8FDFE500E1E5BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F93FAEB2D8FDFF400E1E5BA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
