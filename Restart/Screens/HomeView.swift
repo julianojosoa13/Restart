@@ -12,12 +12,33 @@ struct HomeView: View {
     
     var body: some View {            
         VStack(spacing: 20) {
-            Text("Home")
-                .font(.largeTitle)
+            // HEADER
+            Spacer()
+            
+            Image("character-2")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            
+            // CENTER
+            Text("The time that leads to mastery is dependant on the intesity of our focus")
+            .font(.title3)
+            .multilineTextAlignment(.center)
+            .foregroundColor(.secondary)
+            .fontWeight(.light)
+            .padding()
+            
+            // FOOTER
+            Spacer()
+            
             Button(action: {
                 isOnboardingViewActive = true
             }) {
+                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    .imageScale(.large)
                 Text("Restart")
+                    .font(.system(.title3, design: .rounded))
+                    .fontWeight(.bold)
             }
         } //: VStack
     }
