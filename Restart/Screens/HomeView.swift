@@ -14,12 +14,13 @@ struct HomeView: View {
         VStack(spacing: 20) {
             // HEADER
             Spacer()
-            
-            Image("character-2")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
+            ZStack {
+                CircleGroupView(ShapeColor: .gray, ShapeOpacity: 0.1)
+                Image("character-2")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+            }
             // CENTER
             Text("The time that leads to mastery is dependant on the intesity of our focus")
             .font(.title3)
