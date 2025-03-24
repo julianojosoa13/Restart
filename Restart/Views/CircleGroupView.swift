@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CircleGroupView: View {
-    @State var ShapeColor: Color
-    @State var ShapeOpacity: Double
+    @State var shapeColor: Color
+    @State var shapeOpacity: Double
     
     var body: some View {
         ZStack {
             Circle()
-                .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 40)
+                .stroke(shapeColor.opacity(shapeOpacity), lineWidth: 40)
                 .frame(width: 260, height: 260, alignment: .center)
             Circle()
-                .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
+                .stroke(shapeColor.opacity(shapeOpacity), lineWidth: 80)
                 .frame(width: 260, height: 260, alignment: .center)
         }    }
 }
@@ -27,6 +27,6 @@ struct CircleGroupView: View {
         Color("ColorBlue")
             .ignoresSafeArea(.all, edges: .all)
         
-        CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+        CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
     }
 }

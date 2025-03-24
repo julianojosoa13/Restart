@@ -10,12 +10,12 @@ import SwiftUI
 struct HomeView: View {
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
-    var body: some View {            
+    var body: some View {
         VStack(spacing: 20) {
             // HEADER
             Spacer()
             ZStack {
-                CircleGroupView(ShapeColor: .gray, ShapeOpacity: 0.1)
+                CircleGroupView(shapeColor: .gray, shapeOpacity: 0.1)
                 Image("character-2")
                     .resizable()
                     .scaledToFit()
