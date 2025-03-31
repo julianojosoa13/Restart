@@ -64,6 +64,7 @@ struct OnboardingView: View {
                                     imageOffset = .zero
                                 })
                         )
+                        .animation(.easeInOut(duration: 1), value: imageOffset)
                         
                 }
                 Spacer()
