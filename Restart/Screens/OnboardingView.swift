@@ -46,7 +46,9 @@ struct OnboardingView: View {
                 // CENTER
                 ZStack {
                     CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
-                    
+                        .offset(x: imageOffset.width * -1)
+                        .blur(radius: abs(imageOffset.width) / 5)
+                        .animation(.easeInOut(duration: 1), value: imageOffset)
                     Image("character-1")
                         .resizable()
                         .scaledToFit()
