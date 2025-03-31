@@ -14,6 +14,7 @@ struct OnboardingView: View {
     @State private var isAnimating: Bool = false
     @State private var imageOffset: CGSize = .zero
     @State private var indicatorOpacity: Double = 1.0
+    @State private var textTilte: String = "Share."
     
     var body: some View {
         ZStack() {
@@ -25,10 +26,11 @@ struct OnboardingView: View {
                 Spacer()
                 
                 VStack(spacing: 0) {
-                    Text("Share.")
+                    Text(textTilte)
                         .font(.system(size: 60))
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
+                        .transition(.opacity)
                     
                     Text("""
                         It's not how much we give but
@@ -65,7 +67,10 @@ struct OnboardingView: View {
                                        
                                         withAnimation(.linear(duration: 0.25)) {
                                             indicatorOpacity = 0.0
+                                            textTilte = "Give."
                                         }
+                                        
+                                        
                                     }
                                 })
                                 .onEnded({_ in
@@ -73,7 +78,10 @@ struct OnboardingView: View {
                                     
                                     withAnimation(.linear(duration: 0.25)) {
                                         indicatorOpacity = 1.0
+                                        textTilte = "Share."
                                     }
+                                    
+                                   
                                 })
                         )
                         .animation(.easeInOut(duration: 1), value: imageOffset)
