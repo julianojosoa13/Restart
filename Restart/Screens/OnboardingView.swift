@@ -13,6 +13,7 @@ struct OnboardingView: View {
     @State private var buttonOffset: CGFloat = 0
     @State private var isAnimating: Bool = false
     @State private var imageOffset: CGSize = .zero
+    @State private var indicatorOpacity: Double = 1.0
     
     var body: some View {
         ZStack() {
@@ -61,14 +62,32 @@ struct OnboardingView: View {
                                 .onChanged({gesture in
                                     if abs(imageOffset.width) <= 150 {
                                         imageOffset = gesture.translation
+                                       
+                                        withAnimation(.linear(duration: 0.25)) {
+                                            indicatorOpacity = 0.0
+                                        }
                                     }
                                 })
                                 .onEnded({_ in
                                     imageOffset = .zero
+                                    
+                                    withAnimation(.linear(duration: 0.25)) {
+                                        indicatorOpacity = 1.0
+                                    }
                                 })
                         )
                         .animation(.easeInOut(duration: 1), value: imageOffset)
-                        
+                        .overlay(
+                                Image(systemName: "arrow.left.and.right.circle")
+                                    .font(.system(size: 44, weight: .ultraLight))
+                                    .offset(y: 20)
+                                    .foregroundColor(.white)
+                                    .opacity(isAnimating ? 1: 0)
+                                    .animation(.easeOut(duration: 1).delay(2), value: isAnimating)
+                                    .opacity(indicatorOpacity)
+                                ,
+                                alignment: .bottom
+                        )
                 }
                 Spacer()
                 
